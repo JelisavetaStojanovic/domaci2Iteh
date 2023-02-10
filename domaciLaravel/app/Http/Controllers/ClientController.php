@@ -73,7 +73,7 @@ class ClientController extends Controller
     public function show($user_id, $name)
     {
         $clients = Client::where('user_id', $user_id)->where('name', $name)->get();
-
+     
         if ($clients->isEmpty()) {
             return response()->json('Data not found', 404);
         }
